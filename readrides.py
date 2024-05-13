@@ -166,5 +166,8 @@ def read_rides_as_ride_data(filename):
 if __name__ == '__main__':
     import tracemalloc
     tracemalloc.start()
-    rows = read_rides_as_ride_data('Data/ctabus.csv')
+    rows = read_rides_as_named_tuples('Data/ctabus.csv')
     print('Memory Use: Current %d, Peak %d' % tracemalloc.get_traced_memory())
+
+    print(rows[0])
+    print(rows[0].route)
